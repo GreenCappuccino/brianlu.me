@@ -1,5 +1,5 @@
 <script>
-	import {Badge, Img, Timeline, TimelineItem} from 'flowbite-svelte';
+	import { Badge, Img, Timeline, TimelineItem } from 'flowbite-svelte';
 	import {
 		BuildingColumnsSolid,
 		CalculatorSolid,
@@ -21,13 +21,17 @@
 			timelineIcon: BuildingColumnsSolid,
 			shortDesc: 'B.S. in Computer Engineering',
 			notables: [
-				{course: 'ECE 27000 - Introduction To Digital Design', icon: WaveSquareSolid},
-				{course: 'ECE 33700 - ASIC Design Lab', icon: MicrochipSolid, ongoing: true},
-				{course: 'ECE 20001 - Electrical Engineering Fundamentals I', icon: FileWaveformSolid},
-				{course: 'ECE 20002 - Electrical Engineering Fundamentals II', icon: FileWaveformSolid, ongoing: true},
-				{course: 'ECE 26400 - Advanced C Programming', icon: ComputerSolid, ongoing: true},
-				{course: 'ECE 36900 - Discrete Math', icon: DiagramProjectSolid, ongoing: true},
-				{course: 'MA 26600 - Differential Equations', icon: CalculatorSolid}
+				{ course: 'ECE 27000 - Introduction To Digital Design', icon: WaveSquareSolid },
+				{ course: 'ECE 33700 - ASIC Design Lab', icon: MicrochipSolid, ongoing: true },
+				{ course: 'ECE 20001 - Electrical Engineering Fundamentals I', icon: FileWaveformSolid },
+				{
+					course: 'ECE 20002 - Electrical Engineering Fundamentals II',
+					icon: FileWaveformSolid,
+					ongoing: true
+				},
+				{ course: 'ECE 26400 - Advanced C Programming', icon: ComputerSolid, ongoing: true },
+				{ course: 'ECE 36900 - Discrete Math', icon: DiagramProjectSolid, ongoing: true },
+				{ course: 'MA 26600 - Differential Equations', icon: CalculatorSolid }
 			],
 			ongoing: true
 		},
@@ -37,7 +41,7 @@
 			img: '/images/COD_Logo.svg',
 			imgAlt: 'College of DuPage Logo',
 			timelineIcon: BuildingColumnsSolid,
-			notables: [{course: 'MATH 2245 - Linear Algebra', icon: CalculatorSolid}]
+			notables: [{ course: 'MATH 2245 - Linear Algebra', icon: CalculatorSolid }]
 		},
 		{
 			name: 'Naperville Central High School',
@@ -47,9 +51,9 @@
 			timelineIcon: SchoolSolid,
 			shortDesc: 'High School Diploma',
 			notables: [
-				{course: 'AP Calculus BC', icon: CalculatorSolid},
-				{course: 'UIUC MA 241 - Calculus 3', icon: CalculatorSolid},
-				{course: 'Software Engineering', icon: CodeMergeSolid},
+				{ course: 'AP Calculus BC', icon: CalculatorSolid },
+				{ course: 'UIUC MA 241 - Calculus 3', icon: CalculatorSolid },
+				{ course: 'Software Engineering', icon: CodeMergeSolid }
 			]
 		}
 	];
@@ -64,7 +68,7 @@
 						<span
 							class="flex absolute -left-3 justify-center items-center w-6 h-6 bg-blue-200 rounded-full ring-8 ring-white dark:ring-gray-800 dark:bg-blue-900"
 						>
-							<svelte:component this={item.timelineIcon} size="0.75em"/>
+							<svelte:component this={item.timelineIcon} size="0.75em" />
 						</span>
 					</svelte:fragment>
 					{#if item.shortDesc}
@@ -85,16 +89,16 @@
 							{#each item.notables as notable, notableIndex}
 								<li>
 									<div class="flex flex-row items-center">
-										<svelte:component this={notable.icon} size="1em" class="mr-2"/>
+										<svelte:component this={notable.icon} size="1em" class="mr-2" />
 										<p>{notable.course}</p>
 										{#if notable.ongoing}
-											<div class="ml-auto">
+											<div class="ml-auto flex flex-row items-center">
 												<Badge color="green" class="ml-2">Ongoing</Badge>
 											</div>
 										{/if}
 									</div>
 									{#if notableIndex < item.notables.length - 1}
-										<hr class="border-gray-200 dark:border-gray-700 mt-1 mb-1"/>
+										<hr class="border-gray-200 dark:border-gray-700 mt-1 mb-1" />
 									{/if}
 								</li>
 							{/each}
@@ -102,7 +106,7 @@
 					{/if}
 				</TimelineItem>
 				{#if item.img}
-					<Img src={item.img} size="w-12 h-fit" alignment="ml-auto pl-5 mt-2" alt={item.imgAlt}/>
+					<Img src={item.img} size="w-12 h-fit" alignment="ml-auto pl-5 mt-2" alt={item.imgAlt} />
 				{/if}
 			</div>
 		{/each}
