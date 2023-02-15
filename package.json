@@ -13,6 +13,10 @@
 		"lint": "prettier --plugin-search-dir . --check . && eslint .",
 		"format": "prettier --plugin-search-dir . --write ."
 	},
+	"pre-commit": [
+		"format",
+		"lint"
+	],
 	"devDependencies": {
 		"@playwright/test": "^1.28.1",
 		"@sveltejs/adapter-static": "^2.0.1",
@@ -27,7 +31,8 @@
 		"eslint-plugin-svelte3": "^4.0.0",
 		"flowbite-svelte": "^0.29.13",
 		"postcss": "^8.4.21",
-		"prettier": "^2.8.0",
+		"pre-commit": "^1.2.2",
+		"prettier": "^2.8.4",
 		"prettier-plugin-svelte": "^2.8.1",
 		"svelte": "^3.54.0",
 		"svelte-awesome-icons": "^0.2.16",
