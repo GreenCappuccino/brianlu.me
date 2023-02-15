@@ -69,7 +69,7 @@
 	>
 		Test tagline please ignore
 	</Heading>
-	<ButtonGroup class="mr-5 mb-4 justify-center items-center hidden sm:flex">
+	<ButtonGroup class="mb-4 justify-center items-center hidden sm:flex">
 		{#each links as link}
 			<Button href={link.href}>
 				{#if link.icon}
