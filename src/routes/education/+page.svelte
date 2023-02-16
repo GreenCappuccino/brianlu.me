@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import { Badge, Img, Timeline, TimelineItem } from 'flowbite-svelte';
 	import {
 		BuildingColumnsSolid,
