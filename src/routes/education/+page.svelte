@@ -59,6 +59,10 @@
 	];
 </script>
 
+<svelte:head>
+	<title>Education | Brian Lu</title>
+</svelte:head>
+
 <div class="ml-1 sm:ml-0">
 	<Timeline order="vertical">
 		{#each items as item}

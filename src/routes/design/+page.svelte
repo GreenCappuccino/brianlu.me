@@ -6,15 +6,20 @@
 			title: 'Shamrock Systems',
 			hideTitle: true,
 			description:
-				'The Shamrock compute cluster comes equipped with its own design language. See how it looks and behaves here.',
+				'The Shamrock compute cluster comes equipped with its own design language. See how it looks and behaves here&nbsp;&raquo;',
 			img: '/images/ShamrockDesignSquareThumb.png',
 			headImg: '/images/shamrock-light.png',
 			headImgDark: '/images/shamrock-dark.png',
 			headImgAlt: 'The Shamrock Logo',
 			href: '/design/shamrock'
-		}
+		},
+		{}
 	];
 </script>
+
+<svelte:head>
+	<title>Design | Brian Lu</title>
+</svelte:head>
 
 {#each items as item, itemIndex}
 	<Card img={item.img} href={item.href} horizontal>
