@@ -12,8 +12,7 @@
 			headImgDark: '/images/shamrock-dark.png',
 			headImgAlt: 'The Shamrock Logo',
 			href: '/design/shamrock'
-		},
-		{}
+		}
 	];
 </script>
 
