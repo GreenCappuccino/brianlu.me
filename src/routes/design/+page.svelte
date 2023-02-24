@@ -12,7 +12,18 @@
 			headImgDark: '/images/shamrock-dark.png',
 			headImgAlt: 'The Shamrock Logo',
 			href: '/design/shamrock'
-		}
+		},
+		{
+			title: 'Crucible SDS',
+			hideTitle: true,
+			description:
+				'The Crucible SDS data processing suite I worked on has a series of logos for each of its software components. Combined they have a unified style&nbsp;&raquo;',
+			img: '/images/cruciblesquare.png',
+			headImg: '/images/crucible-wide-light.png',
+			headImgDark: '/images/crucible-wide-dark.png',
+			headImgAlt: 'The Crucible Logo',
+			href: '/design/crucible'
+		},
 	];
 </script>
 
