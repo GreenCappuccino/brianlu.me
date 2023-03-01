@@ -12,6 +12,7 @@
 		FooterLinkGroup,
 		Heading,
 		Hr,
+		Popover,
 		Sidebar,
 		SidebarGroup,
 		SidebarItem,
@@ -21,9 +22,13 @@
 	import DarkMode from '$lib/components/DarkMode.svelte';
 	import {
 		BarsSolid,
+		EnvelopeSolid,
+		GithubBrand,
 		GraduationCapSolid,
 		HouseChimneySolid,
 		KeySolid,
+		LinkedinBrand,
+		LocationDotSolid,
 		PaintbrushSolid,
 		RectangleListSolid
 	} from 'svelte-awesome-icons';
@@ -56,7 +61,30 @@
 </svelte:head>
 
 <div class="flex flex-col items-center text-center min-h-screen bg-gray-100 dark:bg-black">
-	<div class="m-10 w-full" />
+	<div
+		class="mb-10 mt-5 mx-5 ml-auto flex flex-row items-center gap-5 sm:gap-3 text-gray-700 dark:text-gray-400"
+	>
+		<LocationDotSolid id="layout-location" size="2em" />
+		<Popover
+			class="w-64 text-sm font-normal text-gray-700 dark:text-gray-400 "
+			placement="bottom"
+			title="Mail Address"
+			triggeredBy="#layout-location"
+		>
+			<p>2324 Pontiac Circle</p>
+			<p>Naperville, IL</p>
+			<p>United States of America</p>
+		</Popover>
+		<a href="mailto:contact@brianlu.me">
+			<EnvelopeSolid size="2em" />
+		</a>
+		<a href="https://www.linkedin.com/in/greencappuccino/">
+			<LinkedinBrand size="2em" />
+		</a>
+		<a href="https://github.com/GreenCappuccino">
+			<GithubBrand size="2em" />
+		</a>
+	</div>
 	<a href="/">
 		<Heading class="mb-2" customSize="text-4xl font-extrabold  md:text-5xl lg:text-6xl" tag="h1">
 			Brian Lu
