@@ -129,7 +129,7 @@
 <div class="ml-1 sm:ml-0">
 	<Timeline order="vertical">
 		{#each experiences as experience}
-			<div class="flex flex-row">
+			<div class="flex flex-row items-start">
 				<TimelineItem title={experience.title} date={experience.date}>
 					<svelte:fragment slot="icon">
 						<span
@@ -163,7 +163,7 @@
 				{#if experience.img}
 					<Img
 						src={experience.img}
-						size="w-12 h-fit"
+						size="w-12 h-auto"
 						alignment="ml-auto pl-5 mt-2"
 						class={experience.imgDark ? 'dark:hidden' : ''}
 						alt={experience.imgAlt}
@@ -171,7 +171,7 @@
 					{#if experience.imgDark}
 						<Img
 							src="/images/MerckWhite.svg"
-							size="w-12 h-fit"
+							size="w-12 h-auto"
 							alignment="ml-auto pl-5 mt-2"
 							class="hidden dark:block"
 							alt={experience.imgAlt}

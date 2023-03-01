@@ -66,7 +66,7 @@
 <div class="ml-1 sm:ml-0">
 	<Timeline order="vertical">
 		{#each items as item}
-			<div class="flex flex-row">
+			<div class="flex flex-row items-start">
 				<TimelineItem title={item.name} date={item.date}>
 					<svelte:fragment slot="icon">
 						<span
@@ -110,7 +110,7 @@
 					{/if}
 				</TimelineItem>
 				{#if item.img}
-					<Img src={item.img} size="w-12 h-fit" alignment="ml-auto pl-5 mt-2" alt={item.imgAlt} />
+					<Img src={item.img} size="w-12 h-auto" alignment="ml-auto pl-5 mt-2" alt={item.imgAlt} />
 				{/if}
 			</div>
 		{/each}

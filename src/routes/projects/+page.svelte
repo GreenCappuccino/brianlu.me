@@ -92,7 +92,7 @@
 				{#if item.headImg}
 					<Img
 						src={item.headImg}
-						size="w-96 h-fit"
+						size="w-96 h-auto"
 						alignment="mb-2"
 						class={item.headImgDark ? 'dark:hidden' : null}
 						alt={item.headImgAlt}
@@ -101,7 +101,7 @@
 				{#if item.headImgDark}
 					<Img
 						src={item.headImgDark}
-						size="w-96 h-fit"
+						size="w-96 h-auto"
 						alignment="mb-2"
 						class="hidden dark:block"
 						alt={item.headImgAlt}
