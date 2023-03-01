@@ -39,6 +39,14 @@
 	<title>Keys | Brian Lu</title>
 </svelte:head>
 
+<div class="max-w-sm md:max-w-xl">
+	<p class="mb-4 font-normal text-gray-700 dark:text-gray-400 leading-tight">
+		If you want to verify my commits, authenticate me, etc, here are my GPG and SSH keys.
+	</p>
+	<p class="mb-4 font-normal text-gray-700 dark:text-gray-400 leading-tight">
+		If you're not looking for these, it's probably not important for you right now.
+	</p>
+</div>
 {#each items as item, itemIndex}
 	<div class="flex flex-row items-baseline">
 		<h4 class="mb-2 text-3xl font-bold tracking-tight text-gray-900 dark:text-white">

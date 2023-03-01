@@ -28,7 +28,7 @@
 	<title>Design | Brian Lu</title>
 </svelte:head>
 
-<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="grid grid-cols-1 self-center sm:grid-cols-2 gap-4">
 	{#each items as item, itemIndex}
 		<Card img={item.img} href={item.href}>
 			{#if item.headImg}
