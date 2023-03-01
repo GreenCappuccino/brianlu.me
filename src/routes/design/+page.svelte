@@ -5,24 +5,21 @@
 		{
 			title: 'Shamrock Systems',
 			hideTitle: true,
-			description:
-				'The Shamrock compute cluster comes equipped with its own design language. See how it looks and behaves here&nbsp;&raquo;',
+			description: 'The Shamrock compute cluster comes equipped with its own design language.',
 			img: '/images/ShamrockDesignSquareThumb.png',
 			headImg: '/images/shamrock-light.png',
 			headImgDark: '/images/shamrock-dark.png',
-			headImgAlt: 'The Shamrock Logo',
-			href: '/design/shamrock'
+			headImgAlt: 'The Shamrock Logo'
 		},
 		{
 			title: 'Crucible SDS',
 			hideTitle: true,
 			description:
-				'The Crucible SDS data processing suite I worked on has a series of logos for each of its software components&nbsp;&raquo;',
+				'The Crucible SDS data processing suite I worked on has a series of logos for each of its software components.',
 			img: '/images/cruciblesquare.png',
 			headImg: '/images/crucible-wide-light.png',
 			headImgDark: '/images/crucible-wide-dark.png',
-			headImgAlt: 'The Crucible Logo',
-			href: '/design/crucible'
+			headImgAlt: 'The Crucible Logo'
 		}
 	];
 </script>
@@ -38,6 +35,7 @@
 				<Img
 					src={item.headImg}
 					size="w-96 h-fit"
+					alignment="mb-2"
 					class={item.headImgDark ? 'dark:hidden' : null}
 					alt={item.headImgAlt}
 				/>
@@ -64,3 +62,4 @@
 		</Card>
 	{/each}
 </div>
+<p class="mt-4">Working on some more examples of my work... <b>Coming soon!</b></p>
