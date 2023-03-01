@@ -1,17 +1,79 @@
 <script lang="ts">
-	import { Card, Img } from 'flowbite-svelte';
-	import { GithubBrand } from 'svelte-awesome-icons';
+	import { Badge, Card, Img } from 'flowbite-svelte';
+	import { CodeSolid, GithubBrand, LinkSolid } from 'svelte-awesome-icons';
+
+	enum ItemType {
+		Card,
+		Section
+	}
 
 	let items = [
 		{
-			title: 'cat',
+			type: ItemType.Card,
+			title: 'Shamrock Cluster',
+			headImg: '/images/shamrock-cluster-light.png',
+			headImgDark: '/images/shamrock-cluster-dark.png',
+			headImgAlt: 'Shamrock Cluster',
+			hideTitle: true,
 			description:
-				'pspsp spspspspspspspsp spspspspspspspspspsps pspspspspspsp spspspsps pspspsps&nbsp;&raquo;',
-			img: 'https://purr.objects-us-east-1.dream.io/i/bgnBP.jpg',
-			href: 'http://random.cat/view/691',
-			github: {
-				p: 'placeholder'
-			}
+				'"Production" lab environment featuring <b>Proxmox VE, Ceph, and Kubernetes</b>.' +
+				'<div class="mt-2"/>Find out more on the <b>wiki</b>&nbsp;&raquo;',
+			img: '/images/cluster.jpg',
+			href: 'https://shamrock.systems',
+			icon: LinkSolid
+		},
+		{
+			type: ItemType.Card,
+			title: 'Shamrock Sixnav',
+			headImg: '/images/shamrock-sixnav-full-light.png',
+			headImgDark: '/images/shamrock-sixnav-full-dark.png',
+			headImgAlt: 'Shamrock Sixnav',
+			hideTitle: true,
+			description:
+				'6 Degree of Freedom (6DOF) Optical sensor-based human input device for CAD software' +
+				'<div class="mt-2"/>Find out more on <b>Github</b>&nbsp;&raquo;',
+			img: '/images/sixnav-photo.jpg',
+			href: 'https://github.com/GreenCappuccino/SixnavPrototype',
+			icon: GithubBrand
+		},
+		{
+			type: ItemType.Card,
+			title: 'Sequoia',
+			description:
+				'Flexible asynchronous task scheduler for FIRST Tech Challenge robotics SDK.' +
+				'<ul class="list-disc list-inside my-2">' +
+				'<li><b>Synchronizes</b> and <b>prioritizes</b> subsystem control loops</li>' +
+				'<li>Schedules and controls <b>lifetime</b> of individual tasks that operate on subsystems</li>' +
+				'<li>Fuses positioning data from <b>computer vision</b> and <b>dead reckoning</b> systems</li>' +
+				'<li>Handles player input during multiple subroutine execution</li>' +
+				'</ul>Find out more on <b>Github</b>&nbsp;&raquo;',
+			img: '/images/robot.jpg',
+			href: 'https://github.com/HighOakRobotics/Sequoia',
+			icon: GithubBrand
+		},
+		{ type: ItemType.Section, title: 'Hackathons' },
+		{
+			type: ItemType.Card,
+			title: 'VaxFinder',
+			badge: 'First Place',
+			description:
+				'Fetches COVID-19 vaccine availability data from over 29,000 locations every 15 seconds. ' +
+				'Geolocates user by street address, and notifies them via call when vaccines are available near them.' +
+				'<div class="mt-2"/>Find out more on <b>Devpost</b>&nbsp;&raquo;',
+			img: '/images/vaxfinder-1024.png',
+			href: 'https://devpost.com/software/vaxfinder?ref_content=user-portfolio&ref_feature=in_progress',
+			icon: CodeSolid
+		},
+		{
+			type: ItemType.Card,
+			title: 'Notus',
+			badge: 'Best Future Impact',
+			description:
+				'Monte Carlo simulations of COVID-19 particle spread through various room layouts.' +
+				'<div class="mt-2"/>Find out more on <b>Devpost</b>&nbsp;&raquo;',
+			img: '/images/notus.png',
+			href: 'https://devpost.com/software/covid-room-designer',
+			icon: CodeSolid
 		}
 	];
 </script>
@@ -21,8 +83,11 @@
 </svelte:head>
 
 {#each items as item, itemIndex}
-	<Card img={item.img} href={item.href} horizontal>
-		<div class="flex flex-row items-start">
+	{#if item.type === ItemType.Card}
+		<Card img={item.img} href={item.href} horizontal>
+			{#if item.icon}
+				<svelte:component this={item.icon} class="ml-auto" />
+			{/if}
 			<div class="mr-auto">
 				{#if item.headImg}
 					<Img
@@ -44,20 +109,26 @@
 				{/if}
 				{#if item.title && !item.hideTitle}
 					<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-						{item.title}
+						<div class="flex flex-row items-center ">
+							{item.title}
+							{#if item.badge}
+								<Badge color="green" class="ml-2">{item.badge}</Badge>
+							{/if}
+						</div>
 					</h5>
 				{/if}
 			</div>
-			{#if item.github}
-				<GithubBrand />
+			{#if item.description}
+				<p class="mb-3 font-normal text-gray-700 dark:text-gray-400 leading-tight">
+					{@html item.description}
+				</p>
 			{/if}
-		</div>
-		{#if item.description}
-			<p class="mb-3 font-normal text-gray-700 dark:text-gray-400 leading-tight">
-				{@html item.description}
-			</p>
-		{/if}
-	</Card>
+		</Card>
+	{:else if item.type === ItemType.Section}
+		<h4 class="mb-2 text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
+			{item.title}
+		</h4>
+	{/if}
 	{#if itemIndex < items.length - 1}
 		<div class="m-2" />
 	{/if}
