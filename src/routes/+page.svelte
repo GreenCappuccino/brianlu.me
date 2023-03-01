@@ -5,6 +5,7 @@
 		BriefcaseSolid,
 		ChalkboardUserSolid,
 		DiagramProjectSolid,
+		DownloadSolid,
 		EyeSolid,
 		FileSolid,
 		GearSolid,
@@ -23,11 +24,11 @@
 			shortDesc: 'Student Researcher',
 			points: [
 				{
-					text: 'Worked on a team to architect Safety Data Sheet (SDS) parsing and insights software, <a href="/design" class="text-blue-500">Crucible</a>',
+					text: 'Architected Safety Data Sheet (SDS) parsing and insights software with team',
 					icon: DiagramProjectSolid
 				},
 				{
-					text: 'Software cuts down on hours of work per day reading SDS documents, is currently being integrated into the company',
+					text: 'Software cuts down on hours of work per day reading SDS documents, is currently being integrated',
 					icon: ServerSolid
 				},
 				{
@@ -99,7 +100,13 @@
 </svelte:head>
 
 <div class="max-w-full mb-2">
-	<h3 class="mb-4 text-4xl font-bold text-gray-900 dark:text-white leading-tight">Hello!</h3>
+	<div class="mb-4 flex flex-row items-center">
+		<h3 class="text-4xl font-bold text-gray-900 dark:text-white leading-tight">Hello!</h3>
+		<a href="/doc/Resume.pdf" class="ml-auto flex flex-row items-end">
+			<p class="text-right">Download Resume</p>
+			<DownloadSolid class="ml-2" />
+		</a>
+	</div>
 	<p class="mb-3 font-normal text-gray-700 dark:text-gray-400 leading-tight">
 		I'm a <b>Computer Engineering</b> student at <b>Purdue University Main Campus</b>.
 	</p>
