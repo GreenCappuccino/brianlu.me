@@ -62,4 +62,4 @@
 		</Card>
 	{/each}
 </div>
-<p class="mt-4">Working on some more examples of my work... <b>Coming soon!</b></p>
+<p class="mt-4">Working on some more examples of my designs... <b>Coming soon!</b></p>

@@ -14,7 +14,7 @@
 
 	let experiences = [
 		{
-			title: 'Merck Sharp and Dohme',
+			title: 'Merck Sharp & Dohme',
 			date: '2022 - Present',
 			img: '/images/MerckColor.svg',
 			imgDark: '/images/MerckWhite.svg',
@@ -98,7 +98,7 @@
 	<title>Home | Brian Lu</title>
 </svelte:head>
 
-<div class="max-w-sm md:max-w-xl mb-2">
+<div class="max-w-full mb-2">
 	<h3 class="mb-4 text-4xl font-bold text-gray-900 dark:text-white leading-tight">Hello!</h3>
 	<p class="mb-3 font-normal text-gray-700 dark:text-gray-400 leading-tight">
 		I'm a <b>Computer Engineering</b> student at <b>Purdue University Main Campus</b>.

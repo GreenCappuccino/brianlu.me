@@ -39,7 +39,7 @@
 	<title>Keys | Brian Lu</title>
 </svelte:head>
 
-<div class="max-w-sm md:max-w-xl">
+<div class="max-w-full mb-2">
 	<p class="mb-4 font-normal text-gray-700 dark:text-gray-400 leading-tight">
 		If you want to verify my commits, authenticate me, etc, here are my GPG and SSH keys.
 	</p>
