@@ -1,6 +1,9 @@
 <script lang="ts">
+	/* eslint-disable svelte/no-at-html-tags */
 	import { Badge, Card, Img } from 'flowbite-svelte';
-	import { CodeSolid, GithubBrand, LinkSolid } from 'svelte-awesome-icons';
+	import { Icon } from 'svelte-awesome';
+	import { faCode, faLink } from '@fortawesome/free-solid-svg-icons';
+	import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 	enum ItemType {
 		Card,
@@ -20,7 +23,7 @@
 				'<p class="mt-2">Find out more on the <b>wiki</b>&nbsp;&raquo;</p>',
 			img: '/images/cluster.jpg',
 			href: 'https://shamrock.systems',
-			icon: LinkSolid
+			icon: faLink
 		},
 		{
 			type: ItemType.Card,
@@ -34,7 +37,7 @@
 				'<p class="mt-2">Find out more on <b>Github</b>&nbsp;&raquo;</p>',
 			img: '/images/sixnav-photo.jpg',
 			href: 'https://github.com/GreenCappuccino/SixnavPrototype',
-			icon: GithubBrand
+			icon: faGithub
 		},
 		{
 			type: ItemType.Card,
@@ -49,7 +52,7 @@
 				'</ul><p>Find out more on <b>Github</b>&nbsp;&raquo;</p>',
 			img: '/images/robot.jpg',
 			href: 'https://github.com/HighOakRobotics/Sequoia',
-			icon: GithubBrand
+			icon: faGithub
 		},
 		{ type: ItemType.Section, title: 'Hackathons' },
 		{
@@ -61,8 +64,8 @@
 				'Geolocates user by street address, and notifies them via call when vaccines are available near them.</p>' +
 				'<p class="mt-2">Find out more on <b>Devpost</b>&nbsp;&raquo;</p>',
 			img: '/images/vaxfinder-1024.png',
-			href: 'https://devpost.com/software/vaxfinder?ref_content=user-portfolio&ref_feature=in_progress',
-			icon: CodeSolid
+			href: 'https://devpost.com/software/vaxfinder',
+			icon: faCode
 		},
 		{
 			type: ItemType.Card,
@@ -73,7 +76,7 @@
 				'<p class="mt-2">Find out more on <b>Devpost</b>&nbsp;&raquo;</p>',
 			img: '/images/notus.png',
 			href: 'https://devpost.com/software/covid-room-designer',
-			icon: CodeSolid
+			icon: faCode
 		}
 	];
 </script>
@@ -86,7 +89,7 @@
 	{#if item.type === ItemType.Card}
 		<Card img={item.img} href={item.href} horizontal>
 			{#if item.icon}
-				<svelte:component this={item.icon} class="ml-auto" />
+				<Icon data={item.icon} class="ml-auto !block" width="24" height="24" />
 			{/if}
 			<div class="mr-auto">
 				{#if item.headImg}
@@ -108,7 +111,7 @@
 					/>
 				{/if}
 				{#if item.title && !item.hideTitle}
-					<div class="flex flex-row items-center ">
+					<div class="flex flex-row items-center">
 						<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
 							{item.title}
 						</h5>

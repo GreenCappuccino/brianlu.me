@@ -1,16 +1,17 @@
 <script lang="ts">
 	import { Badge, Img, Timeline, TimelineItem } from 'flowbite-svelte';
 	import {
-		BuildingColumnsSolid,
-		CalculatorSolid,
-		CodeMergeSolid,
-		ComputerSolid,
-		DiagramProjectSolid,
-		FileWaveformSolid,
-		MicrochipSolid,
-		SchoolSolid,
-		WaveSquareSolid
-	} from 'svelte-awesome-icons';
+		faBuildingColumns,
+		faCalculator,
+		faCodeMerge,
+		faComputer,
+		faDiagramProject,
+		faFileWaveform,
+		faMicrochip,
+		faSchool,
+		faWaveSquare
+	} from '@fortawesome/free-solid-svg-icons';
+	import { Icon } from 'svelte-awesome';
 
 	let items = [
 		{
@@ -18,20 +19,20 @@
 			date: 'August 2022 - Present',
 			img: '/images/Purdue_Boilermakers_logo.svg.png',
 			imgAlt: 'Purdue Boilermakers Motion P Logo',
-			timelineIcon: BuildingColumnsSolid,
+			timelineIcon: faBuildingColumns,
 			shortDesc: 'B.S. in Computer Engineering',
 			notables: [
-				{ course: 'ECE 27000 - Introduction To Digital Design', icon: WaveSquareSolid },
-				{ course: 'ECE 33700 - ASIC Design Lab', icon: MicrochipSolid, ongoing: true },
-				{ course: 'ECE 20001 - Electrical Engineering Fundamentals I', icon: FileWaveformSolid },
+				{ course: 'ECE 27000 - Introduction To Digital Design', icon: faWaveSquare },
+				{ course: 'ECE 33700 - ASIC Design Lab', icon: faMicrochip, ongoing: true },
+				{ course: 'ECE 20001 - Electrical Engineering Fundamentals I', icon: faFileWaveform },
 				{
 					course: 'ECE 20002 - Electrical Engineering Fundamentals II',
-					icon: FileWaveformSolid,
+					icon: faFileWaveform,
 					ongoing: true
 				},
-				{ course: 'ECE 26400 - Advanced C Programming', icon: ComputerSolid, ongoing: true },
-				{ course: 'ECE 36900 - Discrete Math', icon: DiagramProjectSolid, ongoing: true },
-				{ course: 'MA 26600 - Differential Equations', icon: CalculatorSolid }
+				{ course: 'ECE 26400 - Advanced C Programming', icon: faComputer, ongoing: true },
+				{ course: 'ECE 36900 - Discrete Math', icon: faDiagramProject, ongoing: true },
+				{ course: 'MA 26600 - Differential Equations', icon: faCalculator }
 			],
 			ongoing: true
 		},
@@ -40,20 +41,20 @@
 			date: 'May 2022 - August 2022',
 			img: '/images/COD_Logo.svg',
 			imgAlt: 'College of DuPage Logo',
-			timelineIcon: BuildingColumnsSolid,
-			notables: [{ course: 'MATH 2245 - Linear Algebra', icon: CalculatorSolid }]
+			timelineIcon: faBuildingColumns,
+			notables: [{ course: 'MATH 2245 - Linear Algebra', icon: faCalculator }]
 		},
 		{
 			name: 'Naperville Central High School',
 			date: 'August 2018 - May 2022',
 			img: '/images/NapervilleCentHSlogo.png',
 			imgAlt: 'Naperville Central High School Logo',
-			timelineIcon: SchoolSolid,
+			timelineIcon: faSchool,
 			shortDesc: 'High School Diploma',
 			notables: [
-				{ course: 'AP Calculus BC', icon: CalculatorSolid },
-				{ course: 'UIUC MA 241 - Calculus 3', icon: CalculatorSolid },
-				{ course: 'Software Engineering', icon: CodeMergeSolid }
+				{ course: 'AP Calculus BC', icon: faCalculator },
+				{ course: 'UIUC MA 241 - Calculus 3', icon: faCalculator },
+				{ course: 'Software Engineering', icon: faCodeMerge }
 			]
 		}
 	];
@@ -72,7 +73,7 @@
 						<span
 							class="flex absolute -left-3 justify-center items-center w-6 h-6 bg-blue-200 rounded-full ring-8 ring-white dark:ring-gray-800 dark:bg-blue-900"
 						>
-							<svelte:component this={item.timelineIcon} size="0.75em" />
+							<Icon data={item.timelineIcon} width="0.75em" height="0.75em" />
 						</span>
 					</svelte:fragment>
 					{#if item.shortDesc}
@@ -93,7 +94,7 @@
 							{#each item.notables as notable, notableIndex}
 								<li>
 									<div class="flex flex-row items-center">
-										<svelte:component this={notable.icon} size="1em" class="mr-2" />
+										<Icon data={notable.icon} width="1em" height="1em" class="mr-2" />
 										<p>{notable.course}</p>
 										{#if notable.ongoing}
 											<div class="ml-auto flex flex-row items-center">

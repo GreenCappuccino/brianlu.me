@@ -1,17 +1,19 @@
-<script>
+<script lang="ts">
+	/* eslint-disable svelte/no-at-html-tags */
 	import { Badge, Card, Img, Timeline, TimelineItem } from 'flowbite-svelte';
 	import {
-		BoltSolid,
-		BriefcaseSolid,
-		ChalkboardUserSolid,
-		DiagramProjectSolid,
-		DownloadSolid,
-		EyeSolid,
-		FileSolid,
-		GearSolid,
-		PrintSolid,
-		ServerSolid
-	} from 'svelte-awesome-icons';
+		faBolt,
+		faBriefcase,
+		faChalkboardUser,
+		faDiagramProject,
+		faDownload,
+		faEye,
+		faFile,
+		faGears,
+		faPrint,
+		faServer
+	} from '@fortawesome/free-solid-svg-icons';
+	import { Icon } from 'svelte-awesome';
 
 	let experiences = [
 		{
@@ -20,28 +22,28 @@
 			img: '/images/MerckColor.svg',
 			imgDark: '/images/MerckWhite.svg',
 			imgAlt: 'Merck Logo',
-			timelineIcon: BriefcaseSolid,
+			timelineIcon: faBriefcase,
 			shortDesc: 'Student Researcher',
 			points: [
 				{
 					text: 'Architected Safety Data Sheet (SDS) parsing and insights software with team',
-					icon: DiagramProjectSolid
+					icon: faDiagramProject
 				},
 				{
 					text: 'Software cuts down on hours of work per day reading SDS documents, is currently being integrated',
-					icon: ServerSolid
+					icon: faServer
 				},
 				{
 					text: 'Wrote low-level PDF parsing engine to extract document hierarchies, fields, and images',
-					icon: FileSolid
+					icon: faFile
 				},
 				{
 					text: 'Created OpenCV-based classifier to accurately detect GHS pictograms',
-					icon: EyeSolid
+					icon: faEye
 				},
 				{
 					text: 'Developed automated PDF templating pipeline to create reports of generated insights',
-					icon: PrintSolid
+					icon: faPrint
 				}
 			],
 			ongoing: true
@@ -51,18 +53,18 @@
 			date: '2021 - 2023',
 			img: '/images/highoak.png',
 			imgAlt: 'High Oak Robotics Logo',
-			timelineIcon: BriefcaseSolid,
+			timelineIcon: faBriefcase,
 			shortDesc: 'Robotics Coach',
 			points: [
 				{
 					text: 'Wrote and maintained <a href="/projects" class="text-blue-500">Sequoia</a> asynchronous scheduling library',
-					icon: GearSolid
+					icon: faGears
 				},
 				{
 					text: 'Teaching of robotics control system concepts to new team members',
-					icon: ChalkboardUserSolid
+					icon: faChalkboardUser
 				},
-				{ text: 'Bootstrapped sensor fusion and navigation technology stack', icon: BoltSolid }
+				{ text: 'Bootstrapped sensor fusion and navigation technology stack', icon: faBolt }
 			]
 		}
 	];
@@ -104,7 +106,7 @@
 		<h3 class="text-4xl font-bold text-gray-900 dark:text-white leading-tight">Hello!</h3>
 		<a href="/doc/Resume.pdf" class="ml-auto flex flex-row items-end">
 			<p class="text-right">Download Resume</p>
-			<DownloadSolid class="ml-2" />
+			<Icon data={faDownload} class="ml-2" width="24" height="24" />
 		</a>
 	</div>
 	<p class="mb-3 font-normal text-gray-700 dark:text-gray-400 leading-tight">
@@ -142,7 +144,7 @@
 						<span
 							class="flex absolute -left-3 justify-center items-center w-6 h-6 bg-blue-200 rounded-full ring-8 ring-white dark:ring-gray-800 dark:bg-blue-900"
 						>
-							<svelte:component this={experience.timelineIcon} size="0.75em" />
+							<Icon data={experience.timelineIcon} class=" w-[0.75em] h-[0.75em]" />
 						</span>
 					</svelte:fragment>
 					<div class="flex flex-row items-center mb-2">
@@ -157,7 +159,7 @@
 						{#each experience.points as point, pointIndex}
 							<li>
 								<div class="flex flex-row items-center">
-									<svelte:component this={point.icon} size="1em" class="mr-2" />
+									<Icon data={point.icon} class="mr-2" width="1em" height="1em" />
 									<p>{@html point.text}</p>
 								</div>
 							</li>

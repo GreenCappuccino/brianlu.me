@@ -1,4 +1,5 @@
 <script lang="ts">
+	/* eslint-disable svelte/no-at-html-tags */
 	import { Card, Img } from 'flowbite-svelte';
 
 	let items = [

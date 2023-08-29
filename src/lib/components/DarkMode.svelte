@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { Button } from 'flowbite-svelte';
-	import { MoonSolid, SunSolid } from 'svelte-awesome-icons';
+	import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
+	import { Icon } from 'svelte-awesome';
 
 	export let buttonClass = '';
 
@@ -12,6 +13,6 @@
 </script>
 
 <Button class={buttonClass} color="alternative" on:click={toggleTheme}>
-	<MoonSolid class="hidden dark:block" size="3ex" />
-	<SunSolid class="dark:hidden" size="3ex" />
+	<Icon data={faMoon} class="!hidden dark:!block w-[20px] h-[20px]" />
+	<Icon data={faSun} class="!block dark:!hidden w-[20px] h-[20px]" />
 </Button>

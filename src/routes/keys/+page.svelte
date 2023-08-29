@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { Badge, Card } from 'flowbite-svelte';
-	import { ChevronRightSolid, KeySolid } from 'svelte-awesome-icons';
+	import { faChevronRight, faKey } from '@fortawesome/free-solid-svg-icons';
+	import { Icon } from 'svelte-awesome';
 
 	let items = [
 		{
@@ -55,7 +56,7 @@
 		{#if item.href}
 			<a href={item.href} class="ml-2 flex flex-row items-center">
 				<p class="text-l font-bold">All</p>
-				<ChevronRightSolid size="1em" />
+				<Icon data={faChevronRight} width="1em" height="1em" />
 			</a>
 		{/if}
 	</div>
@@ -67,7 +68,7 @@
 		>
 			<div class="flex flex-row w-full">
 				<div class="mt-auto mb-auto mr-4">
-					<KeySolid />
+					<Icon data={faKey} width="24" height="24" />
 				</div>
 				<div>
 					<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
@@ -89,7 +90,7 @@
 						</div>
 					{/if}
 				</div>
-				<ChevronRightSolid class="mt-auto mb-auto ml-auto pl-4" size="2em" />
+				<Icon data={faChevronRight} class="mt-auto mb-auto ml-auto pl-4 w-[2em] h-[2em]" />
 			</div>
 		</Card>
 	{/each}

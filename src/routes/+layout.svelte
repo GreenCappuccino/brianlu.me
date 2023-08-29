@@ -20,26 +20,30 @@
 	} from 'flowbite-svelte';
 	import { sineIn } from 'svelte/easing';
 	import DarkMode from '$lib/components/DarkMode.svelte';
+	import { Icon } from 'svelte-awesome';
 	import {
-		BarsSolid,
-		EnvelopeSolid,
-		GithubBrand,
-		GraduationCapSolid,
-		HouseChimneySolid,
-		KeySolid,
-		LinkedinBrand,
-		LocationDotSolid,
-		PaintbrushSolid,
-		RectangleListSolid
-	} from 'svelte-awesome-icons';
+		faBars,
+		faEnvelope,
+		faGraduationCap,
+		faHouseChimney,
+		faKey,
+		faPaintbrush,
+		faRectangleList
+	} from '@fortawesome/free-solid-svg-icons';
+	import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 	let links = [
-		{ href: '/', name: 'Home', icon: HouseChimneySolid },
-		{ href: '/projects', name: 'Projects', icon: RectangleListSolid },
-		{ href: '/education', name: 'Education', icon: GraduationCapSolid },
-		{ href: '/design', name: 'Design', icon: PaintbrushSolid },
-		{ href: '/keys', name: 'Keys', icon: KeySolid }
+		{ href: '/', name: 'Home', icon: faHouseChimney },
+		{ href: '/projects', name: 'Projects', icon: faRectangleList },
+		{ href: '/education', name: 'Education', icon: faGraduationCap },
+		{ href: '/design', name: 'Design', icon: faPaintbrush },
+		{ href: '/keys', name: 'Keys', icon: faKey }
 	];
+	let iconLinks = {
+		email: 'mailto:contact@brianlu.me',
+		linkedin: 'https://www.linkedin.com/in/greencappuccino/',
+		github: 'https://github.com/GreenCappuccino'
+	};
 	let hideDrawer = true;
 	let drawerTransitionParams = {
 		x: -320,
@@ -64,26 +68,45 @@
 	<div
 		class="mb-10 mt-5 mx-5 ml-auto flex flex-row items-center gap-5 sm:gap-3 text-gray-700 dark:text-gray-400"
 	>
-		<LocationDotSolid id="layout-location" size="2em" />
+		<a id="email-icon" href={iconLinks.email}>
+			<Icon data={faEnvelope} style="width: 2em; height: 2em" />
+		</a>
+		<a id="linkedin-icon" href={iconLinks.linkedin}>
+			<Icon data={faLinkedin} style="width: 2em; height: 2em" />
+		</a>
+		<a id="github-icon" href={iconLinks.github}>
+			<Icon data={faGithub} style="width: 2em; height: 2em" />
+		</a>
 		<Popover
-			class="w-64 text-sm font-normal text-gray-700 dark:text-gray-400 "
+			class="w-48 text-sm font-normal text-gray-700 dark:text-gray-400 "
 			placement="bottom"
-			title="Mail Address"
-			triggeredBy="#layout-location"
+			title="Contact Email"
+			triggeredBy="#email-icon"
 		>
-			<p>2324 Pontiac Circle</p>
-			<p>Naperville, IL</p>
-			<p>United States of America</p>
+			<a href={iconLinks.email}>
+				<p class="underline">contact@brianlu.me</p>
+			</a>
 		</Popover>
-		<a href="mailto:contact@brianlu.me">
-			<EnvelopeSolid size="2em" />
-		</a>
-		<a href="https://www.linkedin.com/in/greencappuccino/">
-			<LinkedinBrand size="2em" />
-		</a>
-		<a href="https://github.com/GreenCappuccino">
-			<GithubBrand size="2em" />
-		</a>
+		<Popover
+			class="w-48 text-sm font-normal text-gray-700 dark:text-gray-400 "
+			placement="bottom"
+			title="Linkedin Profile"
+			triggeredBy="#linkedin-icon"
+		>
+			<a href={iconLinks.linkedin}>
+				<p class="underline">in/greencappuccino</p>
+			</a>
+		</Popover>
+		<Popover
+			class="w-48 text-sm font-normal text-gray-700 dark:text-gray-400 "
+			placement="bottom"
+			title="Github Profile"
+			triggeredBy="#github-icon"
+		>
+			<a href={iconLinks.github}>
+				<p class="underline">GreenCappuccino</p>
+			</a>
+		</Popover>
 	</div>
 	<a href="/">
 		<Heading class="mb-2" customSize="text-4xl font-extrabold  md:text-5xl lg:text-6xl" tag="h1">
@@ -101,7 +124,7 @@
 		{#each links as link}
 			<Button href={link.href}>
 				{#if link.icon}
-					<svelte:component this={link.icon} size="1em" class="mr-2" />
+					<Icon data={link.icon} class="mr-2" width="1em" height="1em" />
 				{/if}
 				{link.name}
 			</Button>
@@ -110,11 +133,11 @@
 	</ButtonGroup>
 	<div class="mb-4 ml-2 mr-2 flex flex-row flex-wrap justify-center space-x-2 sm:hidden">
 		<Button class="mt-1 mb-1" color="alternative" on:click={() => (hideDrawer = false)}>
-			<BarsSolid class="mr-2" size="1em" />
+			<Icon data={faBars} class="mr-2" width="1em" height="1em" />
 			Menu
 		</Button>
 		<Button class="mt-1 mb-1" color="alternative" href="/">
-			<HouseChimneySolid class="mr-2" size="1em" />
+			<Icon data={faHouseChimney} class="mr-2" width="1em" height="1em" />
 			Home
 		</Button>
 		<DarkMode buttonClass="mt-1 mb-1" />
@@ -154,7 +177,7 @@
 				<SidebarGroup>
 					{#each links as link}
 						<SidebarItem label={link.name} href={link.href} on:click={() => (hideDrawer = true)}>
-							<svelte:component this={link.icon} slot="icon" />
+							<Icon data={link.icon} slot="icon" />
 						</SidebarItem>
 					{/each}
 				</SidebarGroup>
