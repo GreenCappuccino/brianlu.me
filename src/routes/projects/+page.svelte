@@ -19,7 +19,7 @@
 			headImgAlt: 'Shamrock Cluster',
 			hideTitle: true,
 			description:
-				'<p>"Production" lab environment featuring <b>Proxmox VE, Ceph, and Kubernetes</b>.</p>' +
+				'<p>High Availability lab environment featuring <b>OpenStack, Ceph, and OKD (OpenShift, Kubernetes)</b>.</p>' +
 				'<p class="mt-2">Find out more on the <b>wiki</b>&nbsp;&raquo;</p>',
 			img: '/images/cluster.jpg',
 			href: 'https://shamrock.systems',

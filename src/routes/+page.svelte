@@ -3,6 +3,8 @@
 	import { Badge, Card, Img, Timeline, TimelineItem } from 'flowbite-svelte';
 	import {
 		faBolt,
+		faBoxes,
+		faBrain,
 		faBriefcase,
 		faChalkboardUser,
 		faDiagramProject,
@@ -14,11 +16,53 @@
 		faServer
 	} from '@fortawesome/free-solid-svg-icons';
 	import { Icon } from 'svelte-awesome';
+	import { faConfluence, faDocker } from '@fortawesome/free-brands-svg-icons';
 
 	let experiences = [
 		{
 			title: 'Merck Sharp & Dohme',
-			date: '2022 - Present',
+			date: 'August 2023 - Present',
+			img: '/images/MerckColor.svg',
+			imgDark: '/images/MerckWhite.svg',
+			imgAlt: 'Merck Logo',
+			timelineIcon: faBriefcase,
+			shortDesc: 'Undergraduate Researcher',
+			points: [
+				{
+					text: 'Constructing automated pipelines to process Merck laboratory data using CV and AI techniques',
+					icon: faBrain
+				},
+				{
+					text: 'Storing and modeling data into a structured multi-modal graph knowledge base',
+					icon: faDiagramProject
+				}
+			]
+		},
+		{
+			title: 'Eli Lilly & Company',
+			date: 'May 2023 - August 2023',
+			img: '/images/lilly.png',
+			imgAlt: 'Lilly Logo',
+			timelineIcon: faBriefcase,
+			shortDesc: 'Software Engineering Contractor',
+			points: [
+				{
+					text: 'Developed automated documentation generation reconciling with Confluence, replacing legacy system',
+					icon: faConfluence
+				},
+				{
+					text: 'Optimized Apache Airflow image building operations on both Python Poetry and Docker build steps',
+					icon: faDocker
+				},
+				{
+					text: 'Replicated production deployment on k3d to simulate and resolve Helm deployment errors',
+					icon: faBoxes
+				}
+			]
+		},
+		{
+			title: 'Merck Sharp & Dohme',
+			date: 'August 2022 - May 2023',
 			img: '/images/MerckColor.svg',
 			imgDark: '/images/MerckWhite.svg',
 			imgAlt: 'Merck Logo',
@@ -45,12 +89,11 @@
 					text: 'Developed automated PDF templating pipeline to create reports of generated insights',
 					icon: faPrint
 				}
-			],
-			ongoing: true
+			]
 		},
 		{
 			title: 'High Oak Robotics',
-			date: '2021 - 2023',
+			date: 'May 2021 - January 2023',
 			img: '/images/highoak.png',
 			imgAlt: 'High Oak Robotics Logo',
 			timelineIcon: faBriefcase,
@@ -113,12 +156,13 @@
 		I'm a <b>Computer Engineering</b> student at <b>Purdue University Main Campus</b>.
 	</p>
 	<p class="mb-3 font-normal text-gray-700 dark:text-gray-400 leading-tight">
-		In the past I wrote and maintained <b>navigation</b> and <b>scheduling</b> software for competitive
-		robotics.
+		In the past I wrote and maintained <b>navigation</b> and <b>scheduling</b> software for
+		competitive robotics, wrote parsers for the ingest of structured data of <b>1,000s</b> of chemical
+		Safety Data Sheet PDFs for Merck, and optimized DevOps workflows for Lilly.
 	</p>
 	<p class="mb-3 font-normal text-gray-700 dark:text-gray-400 leading-tight">
-		Now, I'm working on quickly and accurately <b>parsing</b> and structuring <b>1,000s</b> of chemical
-		Safety Data Sheet PDFs for Merck.
+		Now, I'm working with Merck to use Machine Learning and Graph Knowledge Bases together to
+		analyze laboratory data.
 	</p>
 	<p class="mb-3 font-normal text-gray-700 dark:text-gray-400 leading-tight">
 		I have a passion for homelabbing, and own and operate the <a

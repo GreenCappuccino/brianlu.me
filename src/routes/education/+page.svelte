@@ -3,6 +3,7 @@
 	import {
 		faBuildingColumns,
 		faCalculator,
+		faCircleNodes,
 		faCodeMerge,
 		faComputer,
 		faDiagramProject,
@@ -12,26 +13,26 @@
 		faWaveSquare
 	} from '@fortawesome/free-solid-svg-icons';
 	import { Icon } from 'svelte-awesome';
+	import { faPython } from '@fortawesome/free-brands-svg-icons';
 
 	let items = [
 		{
 			name: 'Purdue University',
-			date: 'August 2022 - Present',
+			date: 'August 2022 - May 2025',
 			img: '/images/Purdue_Boilermakers_logo.svg.png',
 			imgAlt: 'Purdue Boilermakers Motion P Logo',
 			timelineIcon: faBuildingColumns,
 			shortDesc: 'B.S. in Computer Engineering',
 			notables: [
+				{ course: 'ECE 30100 - Signals and Systems', icon: faFileWaveform, ongoing: true },
+				{ course: 'ECE 20875 - Python for Data Science', icon: faPython, ongoing: true },
 				{ course: 'ECE 27000 - Introduction To Digital Design', icon: faWaveSquare },
 				{ course: 'ECE 33700 - ASIC Design Lab', icon: faMicrochip, ongoing: true },
 				{ course: 'ECE 20001 - Electrical Engineering Fundamentals I', icon: faFileWaveform },
-				{
-					course: 'ECE 20002 - Electrical Engineering Fundamentals II',
-					icon: faFileWaveform,
-					ongoing: true
-				},
-				{ course: 'ECE 26400 - Advanced C Programming', icon: faComputer, ongoing: true },
-				{ course: 'ECE 36900 - Discrete Math', icon: faDiagramProject, ongoing: true },
+				{ course: 'ECE 20002 - Electrical Engineering Fundamentals II', icon: faFileWaveform },
+				{ course: 'ECE 36800 - Data Structures', icon: faCircleNodes, ongoing: true },
+				{ course: 'ECE 26400 - Advanced C Programming', icon: faComputer },
+				{ course: 'ECE 36900 - Discrete Math', icon: faDiagramProject },
 				{ course: 'MA 26600 - Differential Equations', icon: faCalculator }
 			],
 			ongoing: true
