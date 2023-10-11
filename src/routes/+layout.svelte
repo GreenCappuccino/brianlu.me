@@ -118,7 +118,7 @@
 		customSize="text-lg lg:text-xl sm:px-16 xl:px-48"
 		tag="h2"
 	>
-		Practical Chaos at Scale
+		High Availability
 	</Heading>
 	<ButtonGroup class="mb-4 justify-center items-center hidden sm:flex">
 		{#each links as link}
