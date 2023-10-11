@@ -7,11 +7,13 @@
 		faBrain,
 		faBriefcase,
 		faChalkboardUser,
+		faCompactDisc,
 		faDiagramProject,
 		faDownload,
 		faEye,
 		faFile,
 		faGears,
+		faPen,
 		faPrint,
 		faServer
 	} from '@fortawesome/free-solid-svg-icons';
@@ -29,22 +31,38 @@
 			shortDesc: 'Undergraduate Researcher',
 			points: [
 				{
-					text: 'Constructing automated pipelines to process Merck laboratory data using CV and AI techniques',
+					text: 'Designing a Visual Document Understanding (VDU) solution for use in converting scanned lab documents to JSON',
+					icon: faFile
+				},
+				{
+					text: 'Performing transfer learning for the Naver Clova AI Donut Swin Transformer/BART model on synthetic documents',
 					icon: faBrain
 				},
 				{
-					text: 'Storing and modeling data into a structured multi-modal graph knowledge base',
+					text: 'Generating synthetic documents for training using Python, ReportLab, and Dask that model real-world characteristics',
+					icon: faPrint
+				},
+				{
+					text: 'Restored tools for the 1994 UniPen on-line handwriting dataset from SunOS 5 to Linux Flatpak',
+					icon: faCompactDisc
+				},
+				{
+					text: 'Writing tools to generate commercially-viable synthetic handwriting for use in synthetic document generation',
+					icon: faPen
+				},
+				{
+					text: 'Designing RDF graph data storage system based on oxigraph in Rust for storage of ingested documents',
 					icon: faDiagramProject
 				}
 			]
 		},
 		{
-			title: 'Eli Lilly & Company',
+			title: 'The Data Mine @ Purdue University',
 			date: 'May 2023 - August 2023',
 			img: '/images/lilly.png',
 			imgAlt: 'Lilly Logo',
 			timelineIcon: faBriefcase,
-			shortDesc: 'Software Engineering Contractor',
+			shortDesc: 'Software Engineering Contractor - Eli Lilly & Company',
 			points: [
 				{
 					text: 'Developed automated documentation generation reconciling with Confluence, replacing legacy system',
